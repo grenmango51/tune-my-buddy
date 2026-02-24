@@ -17,9 +17,9 @@ import {
 
 const navItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "New Job", url: "/jobs/new", icon: Plus },
+  { title: "Jobs", url: "/jobs", icon: Activity },
   { title: "Corpus Manager", url: "/corpus", icon: FolderOpen },
-  { title: "New Job", url: "/new-job", icon: Plus },
-  { title: "Job Monitor", url: "/jobs", icon: Activity },
   { title: "Results", url: "/results", icon: Trophy },
 ];
 
@@ -28,11 +28,11 @@ export function AppSidebar() {
 
   return (
     <Sidebar className="border-r border-sidebar-border">
-      <div className="flex h-14 items-center gap-2 border-b border-sidebar-border px-4">
-        <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-xs font-bold">
-          FT
+      <div className="flex h-14 items-center gap-2.5 border-b border-sidebar-border px-4">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-xs font-bold tracking-tight">
+          QT
         </div>
-        <span className="text-sm font-semibold text-sidebar-foreground">FineTune Lab</span>
+        <span className="text-sm font-semibold text-sidebar-foreground tracking-tight">QuantumTune</span>
       </div>
 
       <SidebarContent>
