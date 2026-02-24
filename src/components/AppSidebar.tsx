@@ -1,6 +1,8 @@
-import { LayoutDashboard, ListTodo, Box, Plus } from "lucide-react";
+import { LayoutDashboard, FolderOpen, Plus, Activity, Trophy, LogOut } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
 import {
   Sidebar,
   SidebarContent,
@@ -15,12 +17,15 @@ import {
 
 const navItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "Jobs", url: "/jobs", icon: ListTodo },
-  { title: "Models", url: "/models", icon: Box },
+  { title: "Corpus Manager", url: "/corpus", icon: FolderOpen },
   { title: "New Job", url: "/new-job", icon: Plus },
+  { title: "Job Monitor", url: "/jobs", icon: Activity },
+  { title: "Results", url: "/results", icon: Trophy },
 ];
 
 export function AppSidebar() {
+  const { signOut } = useAuth();
+
   return (
     <Sidebar className="border-r border-sidebar-border">
       <div className="flex h-14 items-center gap-2 border-b border-sidebar-border px-4">
@@ -59,7 +64,9 @@ export function AppSidebar() {
 
       <SidebarFooter className="border-t border-sidebar-border p-3">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] text-muted-foreground">v0.1.0</span>
+          <Button variant="ghost" size="sm" onClick={signOut} className="text-xs text-muted-foreground">
+            <LogOut className="h-3.5 w-3.5 mr-1" /> Sign Out
+          </Button>
           <ThemeToggle />
         </div>
       </SidebarFooter>
