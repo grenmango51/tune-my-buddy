@@ -10,6 +10,7 @@ import Auth from "./pages/Auth";
 import CorpusManager from "./pages/CorpusManager";
 import NewJob from "./pages/NewJob";
 import JobMonitoring from "./pages/JobMonitoring";
+import JobList from "./pages/JobList";
 import Results from "./pages/Results";
 import NotFound from "./pages/NotFound";
 
@@ -24,7 +25,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
     return () => subscription.unsubscribe();
   }, []);
 
-  if (session === undefined) return null; // loading
+  if (session === undefined) return null;
   if (!session) return <Navigate to="/auth" replace />;
   return <>{children}</>;
 }
@@ -39,8 +40,9 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
           <Route path="/corpus" element={<ProtectedRoute><CorpusManager /></ProtectedRoute>} />
-          <Route path="/new-job" element={<ProtectedRoute><NewJob /></ProtectedRoute>} />
+          <Route path="/jobs/new" element={<ProtectedRoute><NewJob /></ProtectedRoute>} />
           <Route path="/jobs/:jobId" element={<ProtectedRoute><JobMonitoring /></ProtectedRoute>} />
+          <Route path="/jobs" element={<ProtectedRoute><JobList /></ProtectedRoute>} />
           <Route path="/results" element={<ProtectedRoute><Results /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>

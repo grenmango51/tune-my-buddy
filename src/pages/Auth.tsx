@@ -38,12 +38,12 @@ const Auth = () => {
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
-          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground text-sm font-bold">
-            FT
+          <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold">
+            QT
           </div>
           <CardTitle>{isLogin ? "Sign In" : "Sign Up"}</CardTitle>
           <CardDescription>
-            {isLogin ? "Sign in to your FineTune Lab account" : "Create a new account"}
+            {isLogin ? "Sign in to your QuantumTune account" : "Create a new QuantumTune account"}
           </CardDescription>
         </CardHeader>
         <CardContent>
