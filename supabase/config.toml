@@ -1,0 +1,4 @@
+project_id = "udivajdxiifyhdvjzxbx"
+
+[functions.hpc-proxy]
+verify_jwt = false
